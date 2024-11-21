@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .participants {
+            display: inline-flex;
+            gap: 1rem;
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+        }
+        
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        
+        .section:hover {
+            transform: translateY(-4px);
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-right: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f8fafc;
+            border-radius: 0.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -2rem;
+            top: 50%;
+            width: 1rem;
+            height: 1rem;
+            background: var(--secondary);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .advantage-card {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+        
+        .process-steps {
+            counter-reset: step;
+        }
+        
+        .process-step {
+            position: relative;
+            padding: 1rem 3rem 1rem 1rem;
+            margin-bottom: 1rem;
+            background: #f8fafc;
+            border-radius: 0.5rem;
+        }
+        
+        .process-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>סיכום פגישה - הממציא הצעיר 2025</h1>
+            <div class="participants">
+                <span>משתתפים:</span>
+                <span>שניר</span>
+                <span>•</span>
+                <span>אלי</span>
+                <span>•</span>
+                <span>אמילי</span>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>רקע</h2>
+            <p>תחרות "הממציא הצעיר" מתקיימת זו השנה ה-30, במסגרתה תלמידים מפתחים המצאות ומציגים אותן בתערוכה וטקס.</p>
+        </div>
+
+        <div class="section">
+            <h2>אתגרים במתכונת הקיימת</h2>
+            <ul>
+                <li>מעורבות יתר של הורים בהכנת ההמצאות</li>
+                <li>תחושת מיצוי בקונספט הנוכחי</li>
+                <li>קושי בגיוס משתתפים עקב עומס על צוותי ההוראה</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>קונספט חדש</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>מבנה התחרות</h3>
+                    <ul>
+                        <li>הגבלה ל-100 קבוצות</li>
+                        <li>4 משתתפים בכל קבוצה</li>
+                        <li>הרשמה חינמית עד פברואר 2025</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>שלב ההכנה (פברואר-מאי)</h3>
+                    <ul>
+                        <li>3-4 מפגשי זום</li>
+                        <li>3-4 תכנים אסינכרוניים</li>
+                        <li>נושאי הלימוד: שיווק, תכנון, פיתוח מוצר</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>יום השיא</h3>
+                    <strong>פעילות צהריים:</strong>
+                    <ul>
+                        <li>קבלת משימת אתגר</li>
+                        <li>עבודה במתחמים מקצועיים (4 שעות)</li>
+                        <li>ליווי מקצועי במעבדות</li>
+                        <li>פיתוח אב-טיפוס בזמן מוגבל</li>
+                    </ul>
+                    <strong>אירוע ערב:</strong>
+                    <ul>
+                        <li>תצוגת אבטיפוסים במוזיאון</li>
+                        <li>טקס הכרזת זוכים</li>
+                        <li>השתתפות הורים</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>יתרונות המתכונת החדשה</h2>
+            <div class="advantages">
+                <div class="advantage-card">הפחתת העומס על צוותי ההוראה</div>
+                <div class="advantage-card">ריענון משמעותי לתחרות</div>
+                <div class="advantage-card">למידה אותנטית של תהליכי פיתוח</div>
+                <div class="advantage-card">חוויה משמעותית ומעשירה לתלמידים</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>תהליך השתתפות לקבוצה</h2>
+            <div class="process-steps">
+                <div class="process-step">קבלת מידע (דרך מורה/אתר/ביקור שניר)</div>
+                <div class="process-step">הרשמה במערכת עם מונה יורד (100→99→98...)</div>
+                <div class="process-step">קבלת לו"ז מפגשים ותכנים</div>
+                <div class="process-step">השתתפות במפגשי ההכנה</div>
+                <div class="process-step">הגעה ליום השיא עם מלווה</div>
+                <div class="process-step">פיתוח אב-טיפוס במסגרת 4 שעות</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>מתחמים מקצועיים ביום השיא</h2>
+            <div class="advantages">
+                <div class="advantage-card">סדנת פרסום</div>
+                <div class="advantage-card">סדנת שיווק</div>
+                <div class="advantage-card">סדנת פיתוח מוצר</div>
+                <div class="advantage-card">סדנת אפיון</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>משימות להמשך</h2>
+            <ul>
+                <li>פיתוח מפורט של תכני המתחמים</li>
+                <li>בניית תכנית מפגשי הזום והתכנים האסינכרוניים</li>
+                <li>תכנון לוגיסטי של יום השיא</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add intersection observer for fade-in effect
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
